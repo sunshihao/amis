@@ -31,6 +31,7 @@ node_modules
 /theme-npm
 
 dist
+.history
 tsconfig.tsbuildinfo
 lerna-debug.log
 .rollup.cache

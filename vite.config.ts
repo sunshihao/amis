@@ -16,6 +16,7 @@ var I18N = process.env.I18N;
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  // base: '/amisIn/',
   plugins: [
     I18N && i18nPlugin(i18nConfig),
 
@@ -56,6 +57,7 @@ export default defineConfig({
   },
   server: {
     host: '0.0.0.0',
+    cors: true,
     port: 8888
   },
   resolve: {
