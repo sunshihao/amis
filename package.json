@@ -15,6 +15,7 @@
     "fis3": "concurrently --restart-tries -1 npm:fis3-serve npm:fis3-dev",
     "fis3-stop": "fis3 server stop",
     "start": "vite",
+    "dev": "vite",
     "fis3-dev": "fis3 release -cwd ./public",
     "deploy-gh-page": "sh ./deploy-gh-pages.sh",
     "build": "npm run build --workspaces",

@@ -2,6 +2,8 @@ import * as React from 'react';
 import {AlertComponent, ToastComponent, ContextMenu} from 'amis';
 // @ts-ignore
 import AMisSchemaEditor from './Editor';
+import {Icon} from './icons/index';
+
 export default class App extends React.PureComponent {
   render() {
     // 备注: 如果需要改用antd主题，还需要将index.html换成index-antd.html
@@ -9,7 +11,28 @@ export default class App extends React.PureComponent {
     return (
       <div className="Editor-Demo">
         <div id="headerBar" className="Editor-header">
-          <div className="Editor-title">amis 可视化编辑器</div>
+          <div
+            className="Editor-title cursor-pointer"
+            style={{fontWeight: 'bold', fontSize: '14px'}}
+          >
+            <Icon
+              icon="back"
+              title="返回"
+              onClick={() => {
+                // 返回
+                window.$wujie?.bus.$emit(`routerBack`);
+              }}
+            />
+            <span
+              style={{marginLeft: '6px'}}
+              onClick={() => {
+                // 返回
+                window.$wujie?.bus.$emit(`routerBack`);
+              }}
+            >
+              返回
+            </span>
+          </div>
         </div>
         <AMisSchemaEditor theme={curTheme} />
         <ToastComponent theme={curTheme} />

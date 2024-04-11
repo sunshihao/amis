@@ -5,7 +5,7 @@ import {Select, Renderer, uuid, Button} from 'amis';
 import {currentLocale} from 'i18n-runtime';
 import {Portal} from 'react-overlays';
 import {Icon} from './icons/index';
-import LayoutList from './layout/index';
+import LayoutList from './layout/index'; // 常见布局
 import {cxdData} from 'amis-theme-editor-helper';
 
 // 测试组织属性配置面板的国际化，可以放开如下注释
@@ -19,7 +19,7 @@ setThemeConfig(cxdData);
 const schema = {
   type: 'page',
   title: 'Simple Form Page',
-  regions: ['body'],
+  regions: ['body'], // ???
   body: [
     {
       type: 'form',
@@ -520,7 +520,7 @@ class MyRendererPlugin extends BasePlugin {
   ];
 }
 
-LayoutList.push(MyRendererPlugin);
+// LayoutList.push(MyRendererPlugin);
 
 export default class AMisSchemaEditor extends React.Component<any, any> {
   state: any = {
@@ -548,6 +548,17 @@ export default class AMisSchemaEditor extends React.Component<any, any> {
       localStorage.getItem('editting_preview_type') || EditorType.EDITOR;
 
     this.state.schema = this.getSchema(type);
+  }
+
+  componentDidMount(): void {
+    const props = window.$wujie?.props;
+    console.log('微应用接收参数------', props?.schema);
+    if (props?.schema) {
+      // 若是有值则进行默认赋值
+      this.setState({
+        schema: JSON.parse(props.schema)
+      });
+    }
   }
 
   getSchema(type: string) {
@@ -669,7 +680,7 @@ export default class AMisSchemaEditor extends React.Component<any, any> {
   }
 
   render() {
-    const {preview, type, curLanguage} = this.state;
+    const {preview, type, curLanguage, schema} = this.state;
     return (
       <div className="Editor-inner">
         <Portal container={() => document.querySelector('#headerBar') as any}>
@@ -732,6 +743,25 @@ export default class AMisSchemaEditor extends React.Component<any, any> {
                 >
                   切换语料内容
                 </Button>
+              )}
+
+              {preview ? (
+                <></>
+              ) : (
+                <div
+                  className={`header-action-btn primary`}
+                  onClick={() => {
+                    // 触发wujie保存
+                    const props = window.$wujie?.props;
+                    this.onSave(); // 触发原本缓存
+                    window.$wujie?.bus.$emit(`save_${props.id}`, {
+                      id: props.id,
+                      data: schema
+                    });
+                  }}
+                >
+                  保存
+                </div>
               )}
 
               <div

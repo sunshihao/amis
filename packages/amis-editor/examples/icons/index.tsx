@@ -15,4 +15,8 @@ registerIcon('h5-preview', H5Preview);
 import CorpusI18n from './corpus-i18n.svg';
 registerIcon('corpus-i18n', CorpusI18n);
 
+// @ts-ignore
+import Back from './back.svg';
+registerIcon('back', Back);
+
 export {Icon};

@@ -12,6 +12,7 @@ import {EditorNodeContext, EditorNodeType} from '../store/node';
 import {EditorManager} from '../manager';
 import flatten from 'lodash/flatten';
 import {render as reactRender, unmountComponentAtNode} from 'react-dom';
+import {createRoot} from 'react-dom/client';
 import {autobind, JSONGetById, JSONUpdate, appTranslate} from '../util';
 import {ErrorBoundary} from 'amis-core';
 import {CommonConfigWrapper} from './CommonConfigWrapper';
@@ -617,8 +618,10 @@ export function renderThumbToGhost(
   const component = host.getComponent()!;
   const isForm = component?.renderControl && region.region === 'body';
 
+  const rootRend = createRoot(thumbHost);
+
   try {
-    reactRender(
+    rootRend.render(
       render(
         {
           children: ({render}: any) => {
@@ -639,8 +642,7 @@ export function renderThumbToGhost(
           session: 'ghost-thumb'
         },
         path
-      ),
-      thumbHost
+      )
     );
   } catch (e) {}
 
@@ -652,7 +654,8 @@ export function renderThumbToGhost(
   ghost.innerHTML = html;
   /* bca-enable */
 
-  unmountComponentAtNode(thumbHost);
+  // TODO unmountComponentAtNode(thumbHost);
+  rootRend.unmount();
   // bca-disable-next-line
   thumbHost.innerHTML = '';
 }

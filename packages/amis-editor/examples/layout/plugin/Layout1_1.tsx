@@ -4,7 +4,7 @@
 import {FlexPluginBase} from '../../../src/plugin/Layout/FlexPluginBase';
 
 export default class Layout1_1 extends FlexPluginBase {
-  name = '左右均分';
+  name = '左右均分-LOCAL';
   isBaseComponent = false;
   pluginIcon = 'layout-2cols-plugin';
   description = '常见布局：左右均分布局（基于 CSS Flex 实现的布局容器）。';

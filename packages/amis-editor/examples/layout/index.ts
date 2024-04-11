@@ -16,6 +16,10 @@ import Layout1_2_v4 from './plugin/Layout1_2_v4';
 // import Layout_fixed from './plugin/Layout_fixed';
 import Layout_scroll_x from './plugin/Layout_scroll_x';
 import Layout_scroll_y from './plugin/Layout_scroll_y';
+import MyRenderer22Plugin from './plugin/MyRendererPlugin';
+// import InfoCardPlugin from './react-widget/plugin/info-card-plugin';
+
+// import './react-widget/index';
 
 const LayoutList: Array<any> = [
   Layout1_1,
@@ -34,7 +38,9 @@ const LayoutList: Array<any> = [
   // Layout_fixed_bottom,
   // Layout_fixed,
   Layout_scroll_x,
-  Layout_scroll_y
+  Layout_scroll_y,
+  MyRenderer22Plugin
+  // InfoCardPlugin
 ];
 
 export default LayoutList;
