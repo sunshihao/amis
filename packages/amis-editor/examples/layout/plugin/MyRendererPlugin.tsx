@@ -20,7 +20,7 @@ export default class MyRenderer22Plugin extends BasePlugin {
   // 用来生成预览图的
   previewSchema = {
     type: 'my-renderer',
-    target: 'demo'
+    target: 'demo' // 复杂业务组件拖动
   };
 
   // 拖入组件里面时的初始数据
