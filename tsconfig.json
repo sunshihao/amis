@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "lib",
+    "strict": false, // 非严格模式
     "rootDir": "./",
     "module": "commonjs",
     "target": "es5",

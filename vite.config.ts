@@ -16,7 +16,7 @@ var I18N = process.env.I18N;
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // base: '/amisIn/',
+  base: '/localAmis/',
   plugins: [
     I18N && i18nPlugin(i18nConfig),
 

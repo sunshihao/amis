@@ -8,10 +8,10 @@
   "scripts": {
     "dev": "vite --host",
     "start": "vite --host",
-    "build": "npm run clean-dist && cross-env NODE_ENV=production rollup -c && sass scss/office.scss dist/office.css",
-    "build-esm": "npm run clean-dist && cross-env NODE_ENV=production rollup -c rollup.esm.config.js",
+    "build": "npm run clean-dist && cross-env set NODE_ENV=production && rollup -c && sass scss/office.scss dist/office.css",
+    "build-esm": "npm run clean-dist && cross-env set NODE_ENV=production && rollup -c rollup.esm.config.js",
     "test": "jest",
-    "lib": "npm run clean-dist && cross-env NODE_ENV=production IS_LIB=1 rollup -c",
+    "lib": "npm run clean-dist && cross-env set NODE_ENV=production IS_LIB=1 rollup -c",
     "update-snapshot": "jest --updateSnapshot",
     "coverage": "jest --coverage",
     "declaration": "tsc --project tsconfig-for-declaration.json --allowJs --declaration --emitDeclarationOnly --declarationDir ./lib --rootDir ./src",

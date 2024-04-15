@@ -1,9 +1,9 @@
 import 'amis';
 import './locale/index';
 export * from 'amis-editor-core';
-export * from './builder';
+export * from './builder/index';
 import './tpl/index';
-export * from './plugin';
+export * from './plugin/index';
 
 import './renderer/OptionControl';
 import './renderer/ValueFormatControl';

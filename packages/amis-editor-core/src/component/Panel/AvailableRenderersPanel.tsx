@@ -28,6 +28,7 @@ export class AvailableRenderersPanel extends React.Component<
     const customRenderersByOrder = store.customRenderersByOrder || [];
     const groupedSubRenderers = store.groupedSubRenderers || {};
     const groupedCustomRenderers = store.groupedCustomRenderers || {}; // 自定义组件
+    // const groupedBusinessRenderers = store.groupedBusinessRenderers || {}; // 业务组件
 
     return (
       <div className="ae-RendererPanel">
@@ -59,9 +60,24 @@ export class AvailableRenderersPanel extends React.Component<
                     searchRendererType={'renderer'}
                   />
                 </Tab>
-                <Tab
+                {/* <Tab
                   key={'custom-renderers'}
                   eventKey={'custom-renderers'}
+                  title={'业务组件'}
+                  className={`ae-RendererList-tabs-panel custom-renderers`}
+                  mountOnEnter={true}
+                  unmountOnExit={false}
+                >
+                  <RenderersPanel
+                    groupedRenderers={groupedBusinessRenderers}
+                    store={store}
+                    manager={manager}
+                    searchRendererType={'custom-renderer'}
+                  />
+                </Tab> */}
+                <Tab
+                  key={'business-renderers'}
+                  eventKey={'business-renderers'}
                   title={'自定义组件'}
                   className={`ae-RendererList-tabs-panel custom-renderers`}
                   mountOnEnter={true}
@@ -71,7 +87,7 @@ export class AvailableRenderersPanel extends React.Component<
                     groupedRenderers={groupedCustomRenderers}
                     store={store}
                     manager={manager}
-                    searchRendererType={'custom-renderer'}
+                    searchRendererType={'business-renderer'}
                   />
                 </Tab>
               </Tabs>
