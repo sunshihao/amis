@@ -17,6 +17,7 @@ import Layout1_2_v4 from './plugin/Layout1_2_v4';
 import Layout_scroll_x from './plugin/Layout_scroll_x';
 import Layout_scroll_y from './plugin/Layout_scroll_y';
 import MyRenderer22Plugin from './plugin/MyRendererPlugin';
+import business_demo2 from './plugin/business_demo2';
 
 const LayoutList: Array<any> = [
   Layout1_1,
@@ -36,7 +37,8 @@ const LayoutList: Array<any> = [
   // Layout_fixed,
   Layout_scroll_x,
   Layout_scroll_y,
-  MyRenderer22Plugin
+  MyRenderer22Plugin,
+  business_demo2
 ];
 
 export default LayoutList;
