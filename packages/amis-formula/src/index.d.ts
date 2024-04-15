@@ -1,0 +1,10 @@
+import { Evaluator } from './evalutor';
+import { AsyncEvaluator } from './evalutorForAsync';
+import { parse } from './parser';
+import { lexer } from './lexer';
+import { registerFilter, filters, getFilters, extendsFilters } from './filter';
+import { registerFunction, registerFunctionDoc, functionDocs } from './function';
+import type { FilterContext, ASTNode, ParserOptions, EvaluatorOptions } from './types';
+export { parse, lexer, Evaluator, AsyncEvaluator, FilterContext, filters, getFilters, registerFilter, registerFunction, registerFunctionDoc, functionDocs, extendsFilters };
+export declare function evaluate(astOrString: string | ASTNode, data: any, options?: ParserOptions & EvaluatorOptions): any;
+export declare function evaluateForAsync(astOrString: string | ASTNode, data: any, options?: ParserOptions & EvaluatorOptions): Promise<any>;

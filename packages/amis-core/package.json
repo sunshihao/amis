@@ -1,6 +1,6 @@
 {
   "name": "amis-core",
-  "version": "6.3.0",
+  "version": "1.0.0",
   "description": "amis-core",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -104,6 +104,5 @@
       "/node_modules/",
       "/.rollup.cache/"
     ]
-  },
-  "gitHead": "37d23b4a8eb1c663bc38e8dd9040889ea1526ec4"
+  }
 }

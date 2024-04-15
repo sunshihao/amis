@@ -1,5 +1,5 @@
 {
-  "name": "aisuda",
+  "name": "asd",
   "private": true,
   "workspaces": [
     "packages/amis-formula",
@@ -19,6 +19,7 @@
     "fis3-dev": "fis3 release -cwd ./public",
     "deploy-gh-page": "sh ./deploy-gh-pages.sh",
     "build": "npm run build --workspaces",
+    "build:vite": "node --max_old_space_size=8192 ./node_modules/vite/bin/vite.js build",
     "build-esm": "npm run build-esm --workspaces",
     "test": "npm test --workspaces",
     "update-snapshot": "npm run update-snapshot --workspaces",

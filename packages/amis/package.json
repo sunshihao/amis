@@ -1,10 +1,10 @@
 {
   "name": "amis",
   "version": "6.3.0",
-  "description": "一种MIS页面生成工具",
-  "main": "lib/index.js",
-  "module": "esm/index.js",
-  "types": "lib/index.d.ts",
+  "description": "一种MIS页面生成工具 - 0415",
+  "main": ".lib/index.js",
+  "module": ".esm/index.js",
+  "types": ".lib/index.d.ts",
   "scripts": {
     "test": "jest",
     "update-snapshot": "jest --updateSnapshot",
@@ -13,7 +13,8 @@
     "build": "npm run clean-dist && sh build.sh",
     "build-esm": "npm run clean-dist && set NODE_ENV=production && rollup -c rollup.esm.config.js",
     "prettier": "prettier --write '{src,scss,examples}/**/**/*.{js,jsx,ts,tsx,scss,json}'",
-    "build-schemas": "ts-node -O '{\"target\":\"es6\"}' ../../scripts/build-schemas.ts",
+    "build-schemas": "ts-node --esm ../../scripts/build-schemas.ts",
+    "build-schemas-old": "ts-node -O '{\"target\":\"es6\"}' ../../scripts/build-schemas.ts",
     "clean-dist": "rimraf lib/** esm/**"
   },
   "repository": {
@@ -242,6 +243,5 @@
     "office-viewer": "*",
     "react": ">=16.8.6",
     "react-dom": ">=16.8.6"
-  },
-  "gitHead": "37d23b4a8eb1c663bc38e8dd9040889ea1526ec4"
+  }
 }

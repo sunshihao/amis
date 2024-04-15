@@ -24,7 +24,9 @@ const i18nConfig = require('./i18nConfig');
 const settings = {
   globals: {},
   commonConfig: {
-    footer: `window.amisEditorVersionInfo={version:'${version}',buildTime:'${moment().format("YYYY-MM-DD")}'};`,
+    footer: `window.amisEditorVersionInfo={version:'${version}',buildTime:'${moment().format(
+      'YYYY-MM-DD'
+    )}'};`
   }
 };
 

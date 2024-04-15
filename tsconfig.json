@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
     "outDir": "lib",
-    "strict": false, // 非严格模式
+    "strict": true, // 非严格模式
     "rootDir": "./",
     "module": "commonjs",
-    "target": "es5",
+    // "target": "es5",
+    "target": "ES6",
     "lib": ["ES6", "DOM", "ES2015", "ES2021"],
     "jsx": "react",
     "moduleResolution": "node",
@@ -16,12 +17,14 @@
     "noImplicitThis": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
+
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "skipLibCheck": true,
+    "skipLibCheck": true, // 跳过ts检查
     "downlevelIteration": true,
     "composite": true,
-    "allowJs": true,
+    "allowJs": false,
+    "checkJs": false,
     "baseUrl": "./",
     "paths": {
       "amis-core": ["./packages/amis-core/src/index.tsx"],

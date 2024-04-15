@@ -22,7 +22,7 @@
   "scripts": {
     "test": "echo \"Warnings: no test specified\"",
     "build": "npm run clean-dist && set NODE_ENV=production && rollup -c",
-    "build-vite": "vite build",
+    "build-amis": "amis build",
     "build-esm": "npm run clean-dist && set NODE_ENV=production && rollup -c rollup.esm.config.js",
     "clean-dist": "rimraf lib/** esm/**",
     "i18n:update": "npx i18n update --config=./i18nConfig.js",
@@ -45,16 +45,18 @@
     "amis-editor-core": "^6.3.0",
     "amis-postcss": "1.0.0",
     "amis-theme-editor-helper": "*",
+    "amis-widget-cli": "3.2.0",
     "i18n-runtime": "*",
     "lodash": "^4.17.15",
-    "mobx-state-tree": "^3.17.3"
+    "mobx-state-tree": "^3.17.3",
+    "monaco-editor-webpack-plugin": "6.0.0"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^6.1.1",
     "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
-    "@rollup/plugin-typescript": "^8.3.2",
+    "@rollup/plugin-typescript": "8.3.2",
     "@svgr/rollup": "^6.2.1",
     "@types/async": "^2.0.45",
     "@types/classnames": "^2.2.3",
@@ -88,6 +90,7 @@
     "rollup": "^2.73.0",
     "rollup-plugin-auto-external": "^2.0.0",
     "rollup-plugin-license": "^2.7.0",
+    "rollup-plugin-typescript2": "^0.36.0",
     "sass": "^1.49.7",
     "sass-loader": "^12.5.0",
     "style-loader": "^3.2.1",

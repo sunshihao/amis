@@ -1,0 +1,24 @@
+export declare const en_US: {
+    'autoFilter.sortAscending': string;
+    'autoFilter.sortDescending': string;
+    'checkBox.selectAll': string;
+    'checkBox.search': string;
+    'customFilter.equal': string;
+    'customFilter.notEqual': string;
+    'customFilter.greaterThan': string;
+    'customFilter.greaterThanOrEqual': string;
+    'customFilter.lessThan': string;
+    'customFilter.lessThanOrEqual': string;
+    'customFilter.beginsWith': string;
+    'customFilter.notBeginsWith': string;
+    'customFilter.endsWith': string;
+    'customFilter.notEndsWith': string;
+    'customFilter.contains': string;
+    'customFilter.notContains': string;
+    'customFilter.and': string;
+    'customFilter.or': string;
+    average: string;
+    count: string;
+    sum: string;
+};
+export type EnKeys = keyof typeof en_US;

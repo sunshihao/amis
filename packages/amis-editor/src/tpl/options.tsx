@@ -557,8 +557,7 @@ setSchemaTpl('optionAddControl', (params: OptionControlParams) => {
                       onChange: (value, diff: any) => {
                         const pureSchema = JSONPipeOut(
                           value,
-                          (key, propValue) =>
-                            key.substring(0, 2) === '__' || key === 'id'
+                          key => key.substring(0, 2) === '__' || key === 'id'
                         );
                         const addDialog = omit(pureSchema, [
                           'type',
@@ -693,8 +692,7 @@ setSchemaTpl('optionEditControl', (params: OptionControlParams) => {
                       onChange: (value, diff: any) => {
                         const pureSchema = JSONPipeOut(
                           value,
-                          (key, propValue) =>
-                            key.substring(0, 2) === '__' || key === 'id'
+                          key => key.substring(0, 2) === '__' || key === 'id'
                         );
                         const editDialog = omit(pureSchema, [
                           'type',

@@ -1,0 +1,22 @@
+import React from 'react';
+import { PanelProps, RegionConfig, RendererInfo } from '../plugin';
+import { EditorNodeType } from '../store/node';
+import { EditorManager } from '../manager';
+import type { RendererConfig } from 'amis-core';
+import type { SchemaCollection } from 'amis';
+export declare function makeWrapper(manager: EditorManager, info: RendererInfo, rendererConfig: RendererConfig): any;
+export declare function makeSchemaFormRender(manager: EditorManager, schema: {
+    body?: SchemaCollection;
+    controls?: Array<any>;
+    definitions?: any;
+    api?: any;
+    submitOnChange?: boolean;
+    justify?: boolean;
+    panelById?: string;
+    formKey?: string;
+    pipeIn?: (value: any) => any;
+    pipeOut?: (value: any) => any;
+}): ({ value, onChange, popOverContainer, id, store, node }: PanelProps) => React.JSX.Element;
+export declare function hackIn(renderer: RendererConfig, regions?: Array<RegionConfig>, overrides?: any): void;
+export declare function mapReactElement(dom: JSX.Element, iterator: (dom: JSX.Element, index?: number) => JSX.Element, index?: number): JSX.Element;
+export declare function renderThumbToGhost(ghost: HTMLElement, region: EditorNodeType, schema: any, manager: EditorManager): void;
