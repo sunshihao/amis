@@ -42,7 +42,7 @@ module.exports = {
   dev: {
     entry: {
       // 本地调试模式的入口
-      index: './src/index.tsx'
+      index: './lib/index.tsx'
     },
     // 用于开启本地调试模式的相关配置信息
     NODE_ENV: 'development',
@@ -75,7 +75,7 @@ module.exports = {
     },
     // 用于构建生产环境代码的相关配置信息
     NODE_ENV: 'production',
-    assetsRoot: resolve('./demo-6.4.0'), // 打包后的文件绝对路径（物理路径）
+    assetsRoot: resolve('./dist/sdk-1.0.2'), // 打包后的文件绝对路径（物理路径）
     assetsPublicPath: 'https://aisuda.github.io/amis-editor-demo/demo-6.0.0/', // 设置静态资源的引用路径（根域名+路径）
     assetsSubDirectory: '', // 资源引用二级路径
     productionSourceMap: false,

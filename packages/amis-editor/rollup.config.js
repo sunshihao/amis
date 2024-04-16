@@ -19,7 +19,7 @@ import fs from 'fs';
 import i18nPlugin from 'plugin-react-i18n';
 import moment from 'moment';
 
-const i18nConfig = require('./i18nConfig');
+// const i18nConfig = require('./i18nConfig');
 
 const settings = {
   globals: {},
@@ -61,7 +61,6 @@ export default [
   },
   {
     input,
-
     output: [
       {
         ...settings,
@@ -124,7 +123,7 @@ function getPlugins(format = 'esm') {
   };
 
   return [
-    i18nPlugin(i18nConfig),
+    // i18nPlugin(i18nConfig),
     typescript(typeScriptOptions),
     svgr({
       svgProps: {
